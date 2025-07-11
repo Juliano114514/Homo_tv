@@ -24,7 +24,7 @@
       </activity>
 
       <activity
-        android:name=".TextActivity"
+        android:name=".KeyHatTV"
         android:exported="true"
         android:theme="@style/Theme.Test1">
       </activity>

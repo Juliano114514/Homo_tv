@@ -4,7 +4,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class TextActivity extends AppCompatActivity {
+public class KeyHatTV extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

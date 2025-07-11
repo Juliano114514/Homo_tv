@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center_horizontal">
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp"
+    android:text="智 人 T V"
+    android:textSize="50sp" />
+
+  <TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="请选择你频道"
+    android:layout_margin="15dp"
+    android:textSize="18sp"/>
+
+
+
+  <Button
+    android:id = "@+id/keyhat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="略猫区"
+    android:layout_marginTop="15dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp" />
+
+  <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="核算区"
+    android:layout_marginTop="30dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp" />
+
+  <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="见证区"
+    android:layout_marginTop="30dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp" />
+
+  <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="动物园"
+    android:layout_marginTop="30dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp" />
+
+    <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="哈基米"
+      android:layout_marginTop="30dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp" />
+
+</LinearLayout>

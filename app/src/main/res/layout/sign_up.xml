@@ -9,7 +9,7 @@
   <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="70dp"
+    android:layout_marginTop="100dp"
     android:text="@string/title"
     android:textSize="50sp" />
 
@@ -50,7 +50,8 @@
     android:layout_marginTop="20dp"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
-    android:inputType="text"/>
+    android:inputType="text"
+    android:textSize="20sp"/>
 
   <EditText
     android:layout_width="match_parent"
@@ -59,7 +60,8 @@
     android:layout_marginTop="20dp"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
-    android:inputType="textPassword"/>
+    android:inputType="text"
+    android:textSize="20sp"/>
 
   <EditText
     android:layout_width="match_parent"
@@ -67,7 +69,9 @@
     android:hint="@string/play03"
     android:layout_marginTop="20dp"
     android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp" />
+    android:layout_marginEnd="30dp"
+    android:inputType="textPassword"
+    android:textSize="20sp"/>
 
   <EditText
     android:layout_width="match_parent"
@@ -76,7 +80,9 @@
     android:layout_marginTop="20dp"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
-    android:maxLength="6"/>
+    android:maxLength="6"
+    android:inputType="number"
+    android:textSize="20sp"/>
 
   <Button
     android:layout_width="match_parent"
@@ -84,6 +90,7 @@
     android:text="@string/play00"
     android:layout_marginTop="30dp"
     android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp" />
+    android:layout_marginEnd="30dp"
+    android:textSize="20sp"/>
 
 </LinearLayout>

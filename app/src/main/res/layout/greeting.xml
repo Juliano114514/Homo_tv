@@ -30,7 +30,8 @@
     android:text="略猫区"
     android:layout_marginTop="15dp"
     android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp" />
+    android:layout_marginEnd="30dp"
+    android:textSize="20sp"/>
 
   <Button
     android:id = "@+id/dingdong"
@@ -39,7 +40,8 @@
     android:text="核算区"
     android:layout_marginTop="30dp"
     android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp" />
+    android:layout_marginEnd="30dp"
+    android:textSize="20sp"/>
 
   <Button
     android:id = "@+id/purple_egg"
@@ -48,22 +50,31 @@
     android:text="见证区"
     android:layout_marginTop="30dp"
     android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp" />
+    android:layout_marginEnd="30dp"
+    android:textSize="20sp"/>
+
 
   <Button
+    android:id = "@+id/otto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="动物园"
     android:layout_marginTop="30dp"
     android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp" />
+    android:layout_marginEnd="30dp"
+    android:textSize="20sp"
+    android:onClick="xmlClick"/>
+    <!-- xml中绑定点击事件 -->
 
     <Button
+      android:id = "@+id/hachimi"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="哈基米"
       android:layout_marginTop="30dp"
       android:layout_marginStart="30dp"
-      android:layout_marginEnd="30dp" />
+      android:layout_marginEnd="30dp"
+      android:textSize="20sp"
+      android:onClick="xmlClick"/>
 
 </LinearLayout>

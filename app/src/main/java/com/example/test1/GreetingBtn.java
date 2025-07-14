@@ -36,7 +36,7 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
   // 本类实现点击事件监听
   @Override
   public void onClick(View v){
-    Intent intent = new Intent(GreetingBtn.this, KeyHatTV.class);
+    Intent intent = new Intent(GreetingBtn.this, PurpleEgg.class);
     startActivity(intent);
   }
 
@@ -49,4 +49,13 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
     }
   }
 
+  public void xmlClick(View v) {
+    Intent intent = null;
+    if (v.getId() == R.id.otto) {
+      intent = new Intent(GreetingBtn.this, KeyHatTV.class);
+    } else if (v.getId() == R.id.hachimi) {
+      intent = new Intent(GreetingBtn.this, KeyHatTV.class);
+    }
+    startActivity(intent);
+  }
 }

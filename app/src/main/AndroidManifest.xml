@@ -14,7 +14,7 @@
       tools:targetApi="31">
 
       <activity
-        android:name=".GreetingBtn"
+        android:name="GreetingBtn"
         android:exported="true"
         android:theme="@style/Theme.Test1">
         <intent-filter>
@@ -24,8 +24,12 @@
       </activity>
 
       <activity
-        android:name=".KeyHatTV"
-        android:exported="true"
+        android:name="KeyHatTV"
+        android:theme="@style/Theme.Test1">
+      </activity>
+
+      <activity
+        android:name="PurpleEgg"
         android:theme="@style/Theme.Test1">
       </activity>
     </application>

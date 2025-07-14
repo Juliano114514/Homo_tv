@@ -54,6 +54,7 @@
     android:textSize="20sp"/>
 
   <EditText
+    android:id="@+id/account"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="@string/play02"
@@ -64,6 +65,7 @@
     android:textSize="20sp"/>
 
   <EditText
+    android:id="@+id/pwd"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="@string/play03"
@@ -85,12 +87,14 @@
     android:textSize="20sp"/>
 
   <Button
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="@string/play00"
     android:layout_marginTop="30dp"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
-    android:textSize="20sp"/>
+    android:textSize="20sp"
+    android:onClick="logIn"/>
 
 </LinearLayout>

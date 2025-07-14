@@ -1,80 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:orientation="vertical"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:gravity="center_horizontal">
+  android:layout_height="match_parent">
 
   <TextView
+    android:id="@+id/tittle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="100dp"
     android:text="智 人 T V"
-    android:textSize="50sp" />
+    android:textSize="50sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.15"/>
+
 
   <TextView
-    android:id="@+id/textView"
+    android:id="@+id/subtitle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="请选择你频道"
-    android:layout_margin="15dp"
-    android:textSize="18sp"/>
+    android:textSize="18sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/tittle"
+    app:layout_constraintVertical_bias="0.12"/>
 
-
-
-  <Button
-    android:id = "@+id/keyhat"
+  <LinearLayout
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="略猫区"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/subtitle"
+    app:layout_constraintVertical_bias="0.35">
+
+  <Button
+    android:id="@+id/keyhat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"
+    android:layout_marginStart="30dp"
     android:layout_marginTop="15dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp"
-    android:textSize="20sp"/>
+    android:text="略猫区"
+    android:textSize="20sp" />
+
+
 
   <Button
-    android:id = "@+id/dingdong"
+    android:id="@+id/dingdong"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="30dp"
     android:text="核算区"
-    android:layout_marginTop="30dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp"
-    android:textSize="20sp"/>
+    android:textSize="20sp" />
 
   <Button
-    android:id = "@+id/purple_egg"
+    android:id="@+id/purple_egg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="30dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="30dp"
     android:text="见证区"
-    android:layout_marginTop="30dp"
-    android:layout_marginStart="30dp"
+    android:textSize="20sp" />
+
+  <Button
+    android:id="@+id/otto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginEnd="30dp"
-    android:textSize="20sp"/>
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="30dp"
+    android:onClick="xmlClick"
+    android:text="动物园"
+    android:textSize="20sp" />
 
 
   <Button
-    android:id = "@+id/otto"
+    android:id="@+id/hachimi"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="动物园"
-    android:layout_marginTop="30dp"
-    android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
-    android:textSize="20sp"
-    android:onClick="xmlClick"/>
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="30dp"
+    android:onClick="xmlClick"
+    android:text="哈基米"
+    android:textSize="20sp" />
     <!-- xml中绑定点击事件 -->
 
-    <Button
-      android:id = "@+id/hachimi"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="哈基米"
-      android:layout_marginTop="30dp"
-      android:layout_marginStart="30dp"
-      android:layout_marginEnd="30dp"
-      android:textSize="20sp"
-      android:onClick="xmlClick"/>
 
 </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

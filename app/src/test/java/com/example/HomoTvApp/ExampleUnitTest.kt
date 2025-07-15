@@ -1,4 +1,4 @@
-package com.example.test1
+package com.example.HomoTvApp
 
 import org.junit.Test
 

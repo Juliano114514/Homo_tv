@@ -1,4 +1,4 @@
-package com.example.test1;
+package com.example.HomoTvApp;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,8 +54,9 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
     if (v.getId() == R.id.otto) {
       intent = new Intent(GreetingBtn.this, KeyHatTV.class);
     } else if (v.getId() == R.id.hachimi) {
-      intent = new Intent(GreetingBtn.this, KeyHatTV.class);
+      intent = new Intent(GreetingBtn.this, Hachimi.class);
     }
+
     startActivity(intent);
   }
 }

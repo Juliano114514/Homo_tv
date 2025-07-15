@@ -1,4 +1,4 @@
-package com.example.test1;
+package com.example.HomoTvApp;
 
 import android.view.View;
 import android.os.Bundle;
@@ -20,7 +20,7 @@ public class KeyHatTV extends AppCompatActivity {
     setContentView(R.layout.sign_up);
 
     // 获取 TextView
-    TextView textView = findViewById(R.id.textView);
+    TextView textView = findViewById(R.id.marquee);
     textView.setSelected(true);  // 使 TextView 获得焦点
   }
 

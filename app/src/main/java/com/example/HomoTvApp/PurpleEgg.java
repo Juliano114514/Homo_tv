@@ -1,4 +1,4 @@
-package com.example.test1;
+package com.example.HomoTvApp;
 
 import android.os.Bundle;
 import android.media.MediaPlayer;

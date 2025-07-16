@@ -1,13 +1,34 @@
 package com.example.HomoTvApp;
 
+import android.content.ComponentName;
+import android.content.DialogInterface;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.IBinder;
 import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
+import com.example.HomoTvApp.service.SilGelService;
 
 
 public class GreetingBtn extends AppCompatActivity implements View.OnClickListener{
+
+  private SilGelService.OttoBinder ottoBinder = null;
+  private ServiceConnection conn = new ServiceConnection() {
+    @Override
+    public void onServiceConnected(ComponentName name, IBinder service) {
+      ottoBinder = (SilGelService.OttoBinder) service;
+      ottoBinder.wcsndm();
+    }
+
+    @Override
+    public void onServiceDisconnected(ComponentName name) {
+
+    }
+  };
+
   @Override
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
@@ -40,6 +61,13 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
     startActivity(intent);
   }
 
+  // 启动服务
+  public void waAo(View view) {
+    Intent intent = new Intent(this, SilGelService.class);
+   bindService(intent,conn,BIND_AUTO_CREATE);
+  }
+
+
   // 内部类定义
   class ClkKeycat implements View.OnClickListener{
     @Override
@@ -49,14 +77,30 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
     }
   }
 
+
+
+  // xml显式调用并弹出对话框
+  public void ccb(View view) {
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setMessage("老爷爷，我给你踩背来咯");
+    builder.setNegativeButton("？", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        Intent intent = new Intent(GreetingBtn.this,ccb.class);
+        startActivity(intent);
+      }
+    });
+    AlertDialog alertDialog = builder.create();
+    alertDialog.show();
+  }
+
+  // xml隐式调用
   public void xmlClick(View v) {
-    Intent intent = null;
-    if (v.getId() == R.id.otto) {
-      intent = new Intent(GreetingBtn.this, KeyHatTV.class);
-    } else if (v.getId() == R.id.hachimi) {
-      intent = new Intent(GreetingBtn.this, Hachimi.class);
+    if (v.getId() == R.id.hachimi) {
+      Intent intent = new Intent();
+      intent.setAction("LITTLE_WHITE_GLOVES").setClassName(getPackageName(), "com.example.HomoTvApp.Hachimi");
+      startActivity(intent);
     }
 
-    startActivity(intent);
   }
 }

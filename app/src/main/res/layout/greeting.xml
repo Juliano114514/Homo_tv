@@ -44,63 +44,73 @@
     app:layout_constraintTop_toTopOf="@+id/subtitle"
     app:layout_constraintVertical_bias="0.35">
 
-  <Button
-    android:id="@+id/keyhat"
-    android:layout_width="match_parent"
+    <Button
+      android:id="@+id/keyhat"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="30dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="15dp"
+      android:text="略猫区"
+      android:textSize="20sp" />
+
+
+
+    <Button
+      android:id="@+id/dingdong"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="30dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="30dp"
+      android:text="核算区"
+      android:textSize="20sp" />
+
+    <Button
+      android:id="@+id/purple_egg"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="30dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="30dp"
+      android:text="见证区"
+      android:textSize="20sp" />
+
+    <Button
+      android:id="@+id/otto"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="30dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="30dp"
+      android:onClick="ccb"
+      android:text="动物园"
+      android:textSize="20sp" />
+
+
+    <Button
+      android:id="@+id/hachimi"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="30dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="30dp"
+      android:onClick="xmlClick"
+      android:text="哈基米"
+      android:textSize="20sp" />
+  </LinearLayout>
+
+  <TextView
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="30dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginTop="15dp"
-    android:text="略猫区"
-    android:textSize="20sp" />
-
-
-
-  <Button
-    android:id="@+id/dingdong"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="30dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginTop="30dp"
-    android:text="核算区"
-    android:textSize="20sp" />
-
-  <Button
-    android:id="@+id/purple_egg"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="30dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginTop="30dp"
-    android:text="见证区"
-    android:textSize="20sp" />
-
-  <Button
-    android:id="@+id/otto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="30dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginTop="30dp"
-    android:onClick="xmlClick"
-    android:text="动物园"
-    android:textSize="20sp" />
-
-
-  <Button
-    android:id="@+id/hachimi"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="30dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginTop="30dp"
-    android:onClick="xmlClick"
-    android:text="哈基米"
-    android:textSize="20sp" />
-    <!-- xml中绑定点击事件 -->
-
-
-</LinearLayout>
+    android:text="点击硅胶"
+    android:textColor="#0000FF"
+    android:textSize="20sp"
+    android:onClick="waAo"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/linearLayout"
+    app:layout_constraintVertical_bias="0.875"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

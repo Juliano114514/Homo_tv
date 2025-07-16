@@ -8,32 +8,46 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:theme="@style/Theme.Test1">
 
-      <activity
-        android:name="GreetingBtn"
-        android:exported="true"
-        android:theme="@style/Theme.Test1"
-        android:icon="@mipmap/ic_launcher">
-        <intent-filter>
-　　　　　　　　<action android:name="android.intent.action.MAIN"/>
-　　　　　　　　<category android:name="android.intent.category.LAUNCHER" />
-　　　　  </intent-filter>
-      </activity>
+        <activity
+          android:name=".GreetingBtn"
+          android:exported="true"
+          android:icon="@mipmap/ic_launcher"
+          android:theme="@style/Theme.Test1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-      <activity
-        android:name="KeyHatTV"
-        android:theme="@style/Theme.Test1">
-      </activity>
+        <activity
+          android:name=".KeyHatTV"
+          android:theme="@style/Theme.Test1">
+        </activity>
 
-      <activity
-        android:name="PurpleEgg"
-        android:theme="@style/Theme.Test1">
-      </activity>
+        <activity
+          android:name=".PurpleEgg"
+          android:theme="@style/Theme.Test1">
+        </activity>
 
-      <activity
-        android:name="Hachimi"
-        android:theme="@style/Theme.Test1">
-      </activity>
+        <activity
+          android:name=".Hachimi"
+          android:exported="false"
+          android:theme="@style/Theme.Test1">
+            <intent-filter>
+                <action android:name="LITTLE_WHITE_GLOVES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
+        <activity
+          android:name=".ccb"
+          android:theme="@style/Theme.MaterialComponents.Dialog.Alert">
+        </activity>
+
+        <service
+          android:name=".service.SilGelService"
+          android:enabled="true">
+        </service>
 
     </application>
 

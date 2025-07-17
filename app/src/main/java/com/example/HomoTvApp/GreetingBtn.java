@@ -10,24 +10,34 @@ import android.os.IBinder;
 import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
+import android.widget.Toast;
+
+import com.example.HomoTvApp.service.DingDong;
 import com.example.HomoTvApp.service.SilGelService;
 
 
 public class GreetingBtn extends AppCompatActivity implements View.OnClickListener{
 
   private SilGelService.OttoBinder ottoBinder = null;
+  private DingDong.DingdongBinder dingdongBinder = null;
   private ServiceConnection conn = new ServiceConnection() {
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
       ottoBinder = (SilGelService.OttoBinder) service;
-      ottoBinder.wcsndm();
     }
-
     @Override
-    public void onServiceDisconnected(ComponentName name) {
-
-    }
+    public void onServiceDisconnected(ComponentName name) {}
   };
+
+  private ServiceConnection conn2 = new ServiceConnection() {
+    @Override
+    public void onServiceConnected(ComponentName name, IBinder service) {
+      dingdongBinder = (DingDong.DingdongBinder) service;
+    }
+    @Override
+    public void onServiceDisconnected(ComponentName name) {}
+  };
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState){
@@ -44,14 +54,13 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
     dingdong.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        // 暂时跳到略猫区
-        Intent intent = new Intent(GreetingBtn.this, KeyHatTV.class);
-        startActivity(intent);
+        Intent intent = new Intent(GreetingBtn.this, DingDong.class);
+        bindService(intent,conn2,BIND_AUTO_CREATE);
       }
     });
 
     Button purple_egg = findViewById(R.id.purple_egg);
-    purple_egg.setOnClickListener(this); // 见证区临时汇入略猫区
+    purple_egg.setOnClickListener(this);
   }
 
   // 本类实现点击事件监听
@@ -64,7 +73,13 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
   // 启动服务
   public void waAo(View view) {
     Intent intent = new Intent(this, SilGelService.class);
-   bindService(intent,conn,BIND_AUTO_CREATE);
+    bindService(intent,conn,BIND_AUTO_CREATE);
+    if(ottoBinder != null) {
+      ottoBinder.wcsndm();
+    }
+    else{
+      Toast.makeText(this,"Q为什么还不Q",Toast.LENGTH_SHORT).show();
+    }
   }
 
 
@@ -86,7 +101,7 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
     builder.setNegativeButton("？", new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
-        Intent intent = new Intent(GreetingBtn.this,ccb.class);
+        Intent intent = new Intent(GreetingBtn.this, CCB.class);
         startActivity(intent);
       }
     });
@@ -101,6 +116,5 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
       intent.setAction("LITTLE_WHITE_GLOVES").setClassName(getPackageName(), "com.example.HomoTvApp.Hachimi");
       startActivity(intent);
     }
-
   }
 }

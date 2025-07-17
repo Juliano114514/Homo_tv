@@ -2,17 +2,18 @@ package com.example.HomoTvApp;
 
 import android.view.View;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Handler;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class KeyHatTV extends AppCompatActivity {
 
-  private Handler handler = new Handler();
-  private String originalText;
+  private Handler mHandler = new Handler();
+  private String mOriginalText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +27,13 @@ public class KeyHatTV extends AppCompatActivity {
 
   public void logIn(View view){
     Button v = (Button) view;
-    originalText = v.getText().toString();
+    mOriginalText = v.getText().toString();
     v.setEnabled(false);
     v.setText("登录中");
-    handler.postDelayed(new Runnable() {
+    mHandler.postDelayed(new Runnable() {
       @Override
       public void run() {
-        v.setText(originalText);
+        v.setText(mOriginalText);
         v.setEnabled(true);
       }
     },1000);
@@ -42,7 +43,7 @@ public class KeyHatTV extends AppCompatActivity {
     String acc = accEdt.getText().toString();
     String pwd = pwdEdt.getText().toString();
     if(acc.isEmpty() || pwd.isEmpty()){
-      Toast.makeText(this,"账号或密码不能为空，哈气失败😠",Toast.LENGTH_SHORT).show();
+      Toast.makeText(this,"账号或密码不能为空，注册失败😠",Toast.LENGTH_SHORT).show();
     }
 
   }

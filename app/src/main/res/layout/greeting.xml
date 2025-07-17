@@ -9,7 +9,7 @@
     android:id="@+id/tittle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="智 人 T V"
+    android:text="欢迎界面"
     android:textSize="50sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
       android:layout_marginEnd="30dp"
       android:layout_marginStart="30dp"
       android:layout_marginTop="15dp"
-      android:text="略猫区"
+      android:text="账号登录"
       android:textSize="20sp" />
 
 
@@ -63,7 +63,7 @@
       android:layout_marginEnd="30dp"
       android:layout_marginStart="30dp"
       android:layout_marginTop="30dp"
-      android:text="核算区"
+      android:text="前台service"
       android:textSize="20sp" />
 
     <Button
@@ -73,7 +73,7 @@
       android:layout_marginEnd="30dp"
       android:layout_marginStart="30dp"
       android:layout_marginTop="30dp"
-      android:text="见证区"
+      android:text="进入页面"
       android:textSize="20sp" />
 
     <Button
@@ -84,7 +84,7 @@
       android:layout_marginStart="30dp"
       android:layout_marginTop="30dp"
       android:onClick="ccb"
-      android:text="动物园"
+      android:text="弹出对话框"
       android:textSize="20sp" />
 
 
@@ -96,14 +96,14 @@
       android:layout_marginStart="30dp"
       android:layout_marginTop="30dp"
       android:onClick="xmlClick"
-      android:text="哈基米"
+      android:text="recyclerView相册"
       android:textSize="20sp" />
   </LinearLayout>
 
   <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="点击硅胶"
+    android:text="点击互动"
     android:textColor="#0000FF"
     android:textSize="20sp"
     android:onClick="waAo"

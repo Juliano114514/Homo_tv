@@ -23,7 +23,7 @@ public class DingDong extends Service {
   @Override
   public void onCreate() {
     super.onCreate();
-    Toast.makeText(this,"楼上的下来搞核酸",Toast.LENGTH_SHORT).show();
+    Toast.makeText(this,"Dingdong已启动",Toast.LENGTH_SHORT).show();
 
     NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
@@ -33,8 +33,8 @@ public class DingDong extends Service {
 
     Notification notification = new NotificationCompat.Builder(this,"gao_he_suan")
         .setSmallIcon(R.drawable.ic_launcher_background)
-        .setContentTitle("楼上的下来搞核酸")
-        .setContentText("叮咚鸡")
+        .setContentTitle("前台service启动")
+        .setContentText("在此输入文字")
         .build();
     startForeground(1,notification);
   }

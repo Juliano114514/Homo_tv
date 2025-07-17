@@ -36,7 +36,7 @@ public class SilGelService extends Service {
   }
 
   public void wcsndm(){
-    Toast.makeText(SilGelService.this,"我阐述你的梦!",Toast.LENGTH_SHORT).show();
+    Toast.makeText(SilGelService.this,"调用service方法",Toast.LENGTH_SHORT).show();
   }
   public class OttoBinder extends Binder{
     private SilGelService msilGelService = null;
@@ -45,7 +45,7 @@ public class SilGelService extends Service {
     }
 
     public void wcsndm (){
-      Toast.makeText(SilGelService.this,"Q打断别人的E啊",Toast.LENGTH_SHORT).show();
+      Toast.makeText(SilGelService.this,"调用binder方法",Toast.LENGTH_SHORT).show();
       msilGelService.wcsndm();
     }
   }

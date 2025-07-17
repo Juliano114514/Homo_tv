@@ -9,7 +9,7 @@
     android:id="@+id/tittle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/title"
+    android:text="注册账号"
     android:textSize="50sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
     android:id="@+id/marquee"
     android:layout_width="250dp"
     android:layout_height="wrap_content"
-    android:text="@string/sub_title"
+    android:text="请完善信息 邀请码为六位数字 邮箱仅支持@kuaishou.com"
     android:singleLine="true"
     android:ellipsize="marquee"
     android:focusable="true"
@@ -59,7 +59,7 @@
     <ImageView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:src="@mipmap/img"
+      android:src="@mipmap/ic_launcher"
       android:scaleType="centerCrop"/>
 
   </androidx.cardview.widget.CardView>
@@ -78,7 +78,7 @@
     android:id="@+id/account"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:hint="@string/play02"
+    android:hint="账号"
     android:layout_marginTop="20dp"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
@@ -89,7 +89,7 @@
     android:id="@+id/pwd"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:hint="@string/play03"
+    android:hint="密码"
     android:layout_marginTop="20dp"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
@@ -99,7 +99,7 @@
   <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:hint="@string/play04"
+    android:hint="邀请码"
     android:layout_marginTop="20dp"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
@@ -115,7 +115,7 @@
     android:id="@+id/button"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/play00"
+    android:text="注册账号"
     android:layout_marginTop="30dp"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"

@@ -4,13 +4,14 @@ import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.ServiceConnection;
 import android.os.Bundle;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.IBinder;
 import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.HomoTvApp.service.DingDong;
 import com.example.HomoTvApp.service.SilGelService;
@@ -18,25 +19,16 @@ import com.example.HomoTvApp.service.SilGelService;
 
 public class GreetingBtn extends AppCompatActivity implements View.OnClickListener{
 
-  private SilGelService.OttoBinder ottoBinder = null;
-  private DingDong.DingdongBinder dingdongBinder = null;
-  private ServiceConnection conn = new ServiceConnection() {
-    @Override
-    public void onServiceConnected(ComponentName name, IBinder service) {
-      ottoBinder = (SilGelService.OttoBinder) service;
-    }
-    @Override
-    public void onServiceDisconnected(ComponentName name) {}
-  };
+  private SilGelService.OttoBinder mOttoBinder = null;
 
-  private ServiceConnection conn2 = new ServiceConnection() {
+  // 内部类定义，下文用于触发点击事件
+  class ClkKeycat implements View.OnClickListener{
     @Override
-    public void onServiceConnected(ComponentName name, IBinder service) {
-      dingdongBinder = (DingDong.DingdongBinder) service;
+    public void onClick(View v){
+      Intent intent = new Intent(GreetingBtn.this, KeyHatTV.class);
+      startActivity(intent);
     }
-    @Override
-    public void onServiceDisconnected(ComponentName name) {}
-  };
+  }
 
 
   @Override
@@ -49,13 +41,13 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
     ClkKeycat clkKeycat = new ClkKeycat();
     keyhat.setOnClickListener(clkKeycat);
 
-    // 匿名类实现点击事件监听
+    // 匿名类实现点击事件监听启动服务
     Button dingdong = findViewById(R.id.dingdong);
     dingdong.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         Intent intent = new Intent(GreetingBtn.this, DingDong.class);
-        bindService(intent,conn2,BIND_AUTO_CREATE);
+        bindService(intent,link2,BIND_AUTO_CREATE);
       }
     });
 
@@ -63,7 +55,7 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
     purple_egg.setOnClickListener(this);
   }
 
-  // 本类实现点击事件监听
+  // 本类实现点击事件监听（通过implements）
   @Override
   public void onClick(View v){
     Intent intent = new Intent(GreetingBtn.this, PurpleEgg.class);
@@ -73,40 +65,13 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
   // 启动服务
   public void waAo(View view) {
     Intent intent = new Intent(this, SilGelService.class);
-    bindService(intent,conn,BIND_AUTO_CREATE);
-    if(ottoBinder != null) {
-      ottoBinder.wcsndm();
+    bindService(intent,link1,BIND_AUTO_CREATE);
+    if(mOttoBinder != null) {
+      mOttoBinder.wcsndm();
     }
     else{
-      Toast.makeText(this,"Q为什么还不Q",Toast.LENGTH_SHORT).show();
+      Toast.makeText(this,"启动service",Toast.LENGTH_SHORT).show();
     }
-  }
-
-
-  // 内部类定义
-  class ClkKeycat implements View.OnClickListener{
-    @Override
-    public void onClick(View v){
-      Intent intent = new Intent(GreetingBtn.this, KeyHatTV.class);
-      startActivity(intent);
-    }
-  }
-
-
-
-  // xml显式调用并弹出对话框
-  public void ccb(View view) {
-    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setMessage("老爷爷，我给你踩背来咯");
-    builder.setNegativeButton("？", new DialogInterface.OnClickListener() {
-      @Override
-      public void onClick(DialogInterface dialog, int which) {
-        Intent intent = new Intent(GreetingBtn.this, CCB.class);
-        startActivity(intent);
-      }
-    });
-    AlertDialog alertDialog = builder.create();
-    alertDialog.show();
   }
 
   // xml隐式调用
@@ -117,4 +82,38 @@ public class GreetingBtn extends AppCompatActivity implements View.OnClickListen
       startActivity(intent);
     }
   }
+
+  // xml显式调用并弹出对话框
+  public void ccb(View view) {
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setMessage("标题");
+    builder.setNegativeButton("确认", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        Intent intent = new Intent(GreetingBtn.this, CCB.class);
+        startActivity(intent);
+      }
+    });
+    AlertDialog alertDialog = builder.create();
+    alertDialog.show();
+  }
+
+
+  //构建serviceConnection类用以绑定服务
+  private ServiceConnection link1 = new ServiceConnection() {
+    @Override
+    public void onServiceConnected(ComponentName name, IBinder service) {
+      mOttoBinder = (SilGelService.OttoBinder) service;
+    }
+    @Override
+    public void onServiceDisconnected(ComponentName name) {}
+  };
+
+  private ServiceConnection link2 = new ServiceConnection() {
+    @Override
+    public void onServiceConnected(ComponentName name, IBinder service) {
+    }
+    @Override
+    public void onServiceDisconnected(ComponentName name) {}
+  };
 }

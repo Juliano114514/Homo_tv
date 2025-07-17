@@ -2,6 +2,7 @@ package com.example.HomoTvApp;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,26 +14,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Hachimi extends AppCompatActivity {
 
-  private ListView hachimiListView;
-  private List<String> hachimiStr = new ArrayList<>();
-  private ArrayAdapter<String> hachimiAdapter;
+  private ListView mHachimiListView;
+  private List<String> mHachimiStr = new ArrayList<>();
+  private ArrayAdapter<String> mHachimiAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.hachimi);
-    hachimiListView = findViewById(R.id.your_heroes);
+    mHachimiListView = findViewById(R.id.your_heroes);
 
     for (int i = 0; i < 50; i++) {
-      hachimiStr.add("胖宝宝" + i);
+      mHachimiStr.add("条目" + i);
     }
 
-    hachimiAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,hachimiStr);
-    hachimiListView.setAdapter(hachimiAdapter);
-    hachimiListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    mHachimiAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, mHachimiStr);
+    mHachimiListView.setAdapter(mHachimiAdapter);
+    mHachimiListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(Hachimi.this,"好胖好可爱",Toast.LENGTH_SHORT).show();
+        Toast.makeText(Hachimi.this,"条目"+id+"被点击",Toast.LENGTH_SHORT).show();
       }
     });
   }

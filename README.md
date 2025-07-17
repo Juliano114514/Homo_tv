@@ -1,8 +1,13 @@
 # Homo_tv
 
+待解决：
+    1️⃣ 前台service未能正常启动
+    2️⃣ 账号注册登录交互未完善
+    3️⃣ ListView组件未更换为RecyclerView
+
 v0.0.6a.1 格式命名标准化
 
-v0.0.6a 开发阳间版，mentor特供
+v0.0.6a 开发clean版本
 
 v0.0.6.1 本地账号同步上传尝试
 
